@@ -177,7 +177,7 @@
   margin-bottom: 30px;
   line-height: 1.5;
 }
-.section .title-box .more {
+.section .more {
   width: 200px;
   height: 60px;
   display: flex;
@@ -190,7 +190,7 @@
   font-weight: 700;
   font-size: 14px;
 }
-.section .title-box .more:after {
+.section .more:after {
   content: "\f061";
   font-family: "FontAwesome";
   display: block;
@@ -278,7 +278,9 @@
   font-size: 24px;
   margin-left: 10px;
 }
-
+#research .mobile-only {
+  display: none;
+}
 #fund .fund-list {
   border-top: 4px solid #111;
 }
@@ -328,6 +330,7 @@
   height: 100px;
   background-color: #0467b3;
   color: #fff;
+  flex-shrink: 0;
   flex-direction: column;
   display: flex;
   justify-content: center;
@@ -625,10 +628,24 @@
     flex-direction: column;
   }
   #research {
+    position: relative;
     padding: clamp(50px, 15.625vw, 200px) 0;
   }
   #research:before {
     width: 62.5vw;
+  }
+  #research .title-box .more {
+    display: none;
+  }
+  #research .mobile-only {
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #research .container {
+    position: static;
   }
   #research .container .title-box {
     position: static;
@@ -645,6 +662,9 @@
   }
   #research .banner .mask {
     margin-left: 0;
+  }
+  #fund {
+    padding: clamp(50px, 15.625vw, 200px) 0;
   }
 }
 @media all and (max-width: 980px) {
@@ -691,6 +711,18 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+  }
+  #fund .fund-list li {
+    padding: 15px;
+  }
+  #fund .fund-list li .main {
+    flex-direction: column;
+  }
+  #fund .fund-list li .main .date {
+    margin-top: 10px;
+  }
+  #fund .fund-list li .contents .img-box {
+    display: none;
   }
 }
 @media all and (max-width: 640px) {

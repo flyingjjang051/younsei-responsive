@@ -181,23 +181,23 @@
       margin-bottom: 30px;
       line-height: 1.5;
     }
-    .more {
-      width: 200px;
-      height: 60px;
-      display: flex;
-      box-sizing: border-box;
-      background-color: $main-color;
-      color: #fff;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 30px;
-      font-weight: 700;
-      font-size: 14px;
-      &:after {
-        content: "\f061";
-        font-family: "FontAwesome";
-        display: block;
-      }
+  }
+  .more {
+    width: 200px;
+    height: 60px;
+    display: flex;
+    box-sizing: border-box;
+    background-color: $main-color;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    font-weight: 700;
+    font-size: 14px;
+    &:after {
+      content: "\f061";
+      font-family: "FontAwesome";
+      display: block;
     }
   }
 }
@@ -286,6 +286,11 @@
       }
     }
   }
+  .mobile-only {
+    display: none;
+  }
+  .more {
+  }
 }
 
 #fund {
@@ -339,6 +344,7 @@
           height: 100px;
           background-color: $main-color;
           color: #fff;
+          flex-shrink: 0;
           flex-direction: column;
           @include flex;
           border-radius: 10px;
@@ -648,11 +654,25 @@
     }
   }
   #research {
+    position: relative;
     padding: clamp(50px, 15.625vw, 200px) 0;
     &:before {
       width: 62.5vw;
     }
+    .title-box {
+      .more {
+        display: none;
+      }
+    }
+    .mobile-only {
+      display: flex;
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
     .container {
+      position: static;
       .title-box {
         position: static;
         width: 100%;
@@ -671,6 +691,9 @@
         margin-left: 0;
       }
     }
+  }
+  #fund {
+    padding: clamp(50px, 15.625vw, 200px) 0;
   }
 }
 
@@ -720,6 +743,24 @@
             p {
               @include ellipsis;
             }
+          }
+        }
+      }
+    }
+  }
+  #fund {
+    .fund-list {
+      li {
+        padding: 15px;
+        .main {
+          flex-direction: column;
+          .date {
+            margin-top: 10px;
+          }
+        }
+        .contents {
+          .img-box {
+            display: none;
           }
         }
       }
