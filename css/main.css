@@ -246,6 +246,9 @@
   margin-left: 400px;
   overflow: hidden;
 }
+#research .banner .mask li {
+  width: 450px;
+}
 #research .banner .mask li .img-box {
   height: 300px;
   display: flex;
@@ -606,8 +609,14 @@
   }
 }
 @media all and (max-width: 1280px) {
+  #main-visual {
+    position: relative;
+  }
   #main-visual .mask {
     width: 100%;
+    right: auto;
+    left: 20px;
+    height: clamp(450px, 66vw, 850px);
   }
   #main-visual > .contents {
     bottom: 0;
@@ -615,9 +624,40 @@
   #main-visual > .contents .news-and-notice {
     flex-direction: column;
   }
+  #research {
+    padding: clamp(50px, 15.625vw, 200px) 0;
+  }
+  #research:before {
+    width: 62.5vw;
+  }
+  #research .container .title-box {
+    position: static;
+    width: 100%;
+    text-align: center;
+  }
+  #research .container .title-box .btns {
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+  #research .banner {
+    width: 100%;
+  }
+  #research .banner .mask {
+    margin-left: 0;
+  }
 }
 @media all and (max-width: 980px) {
-  #main-visual .container {
+  .section .title-box h2 {
+    font-size: clamp(22px, 3.3vw, 32px);
+  }
+  .section .title-box h2 br {
+    content: "";
+  }
+  .section .title-box p {
+    font-size: 14px;
+  }
+  .container {
     padding: 0 20px;
   }
   #main-visual > .contents .title {
@@ -654,8 +694,26 @@
   }
 }
 @media all and (max-width: 640px) {
+  #main-visual .contents .news h3 {
+    font-size: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  #main-visual .contents .news .desc {
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
   #main-visual .contents .notice {
     margin-left: -20px;
     width: calc(100% + 40px);
+  }
+  #main-visual .contents .notice .title-box {
+    display: none;
+    padding: 0 20px;
   }
 }
