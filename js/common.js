@@ -52,6 +52,8 @@ $(window).on("resize", function () {
   }
 });
 
+$(window).trigger("resize");
+
 depth01.on("click", function (e) {
   if ($("html").hasClass("m")) {
     const depth02 = $(this).next();

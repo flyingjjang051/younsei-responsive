@@ -110,6 +110,7 @@
         }
         .date {
           flex-direction: column;
+          flex-shrink: 0;
           width: 80px;
           height: 80px;
           overflow: hidden;
@@ -126,9 +127,14 @@
           }
         }
         .txt {
+          flex-shrink: 1;
           h3 {
+            width: 100%;
             margin-bottom: 10px;
             font-size: $h3 - 2px;
+          }
+          p {
+            width: 100%;
           }
         }
         .btns {
@@ -614,4 +620,77 @@
 }
 */
 #research {
+}
+
+@media all and (max-width: 1460px) {
+  .container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 50px;
+  }
+}
+@media all and (max-width: 1280px) {
+  #main-visual {
+    .mask {
+      width: 100%;
+    }
+    > .contents {
+      bottom: 0;
+      .news-and-notice {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 980px) {
+  #main-visual {
+    .container {
+      padding: 0 20px;
+    }
+    > .contents {
+      .title {
+        font-size: clamp(24px, 7vw, 68px);
+      }
+      .news {
+        width: 100%;
+      }
+      .notice {
+        margin-top: 50px;
+        width: 100%;
+        .contents {
+          .date {
+            margin-right: 20px;
+          }
+          .btns {
+            right: 10px;
+          }
+          .fraction-pagination {
+            right: 80px;
+          }
+          .txt {
+            width: calc(100% - 250px);
+            h3 {
+              @include ellipsis;
+            }
+            p {
+              @include ellipsis;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 640px) {
+  #main-visual {
+    .container {
+    }
+    .contents {
+      .notice {
+        margin-left: -20px;
+        width: calc(100% + 40px);
+      }
+    }
+  }
 }

@@ -383,3 +383,40 @@ button {
     margin-right: 10px;
   }
 }
+@media all and (max-width: 640px) {
+  #header {
+    height: 60px;
+  }
+  #header .container {
+    padding: 0;
+  }
+  #header #logo {
+    height: 60px;
+  }
+  #header #logo img {
+    height: 30px;
+  }
+  #header #gnb {
+    top: 60px;
+  }
+  #header #gnb .list > li .depth01 {
+    height: 60px;
+  }
+  #header .util {
+    height: 60px;
+    margin-right: 10px;
+  }
+  #header .util .language {
+    padding: 10px;
+    font-size: 12px;
+  }
+  #header .util .language button {
+    font-size: 12px;
+  }
+  #header .util .language button:before {
+    font-size: 16px;
+  }
+  #header .util .all-menu {
+    margin-left: 20px;
+  }
+}
