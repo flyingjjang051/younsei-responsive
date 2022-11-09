@@ -1,15 +1,26 @@
 #sub-visual {
   height: 550px;
-  background: url("../images/main/bg_main_visual.jpg") no-repeat;
+  background: url("../images/sub-contents/bg_sub_visual.jpg") no-repeat;
   background-size: cover;
   padding-top: 120px;
   box-sizing: border-box;
   display: flex;
   overflow: hidden;
 }
+#sub-visual:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  background-color: #fff;
+  right: 0;
+  top: 0;
+}
 #sub-visual .container {
   display: flex;
   position: relative;
+  z-index: 1;
 }
 #sub-visual .sub-title {
   font-size: 48px;
@@ -46,6 +57,8 @@
 #lnb {
   background-color: #0467b3;
   color: #fff;
+  position: relative;
+  z-index: 2;
 }
 #lnb .container {
   display: flex;
@@ -57,6 +70,7 @@
   overflow: hidden;
   text-indent: -999px;
   border-left: 1px solid rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
 }
 #lnb .container .lnb-box {
   width: 300px;
@@ -179,10 +193,12 @@
 .greeting .container {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .greeting .container .img-box {
   position: relative;
   border: 1px solid #ccc;
+  flex-shrink: 0;
 }
 .greeting .container .img-box img {
   width: 450px;
@@ -242,6 +258,32 @@
   margin-bottom: 20px;
 }
 
+@media all and (max-width: 980px) {
+  .greeting .container {
+    flex-direction: column;
+  }
+  .greeting .container .img-box {
+    width: 100%;
+  }
+  .greeting .container .img-box:after {
+    display: none;
+  }
+  .greeting .container .img-box img {
+    width: 100%;
+  }
+  .greeting .container .greeting-box {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .greeting .container .greeting-box h4 {
+    line-height: 1.5;
+    font-size: clamp(24px, 3.6vw, 36px);
+  }
+}
+.history {
+  display: none;
+}
 .history .scroll-menu ul {
   display: flex;
   justify-content: center;
@@ -402,4 +444,40 @@
 }
 .history .chairman-list02 .list ul li span.period {
   border-right: none;
+}
+
+@media all and (max-width: 1280px) {
+  #sub-visual {
+    height: clamp(300px, 43vw, 550px);
+  }
+  #sub-visual .sub-title {
+    font-size: clamp(24px, 3.75vw, 48px);
+    margin-top: -50px;
+  }
+  #lnb .container {
+    padding: 0;
+  }
+  .contents-title {
+    padding: clamp(30px, 7.8vw, 100px) 0;
+    font-size: clamp(24px, 3.8vw, 38px);
+  }
+  #sub-contents {
+    padding: clamp(30px, 7.8vw, 100px) 0;
+  }
+}
+@media all and (max-width: 980px) {
+  #sub-visual .container {
+    justify-content: center;
+  }
+  #sub-visual:after {
+    display: none;
+  }
+  #sub-visual .bg {
+    display: none;
+  }
+}
+@media all and (max-width: 640px) {
+  #sub-visual {
+    padding-top: 60px;
+  }
 }

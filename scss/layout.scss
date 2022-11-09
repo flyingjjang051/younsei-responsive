@@ -391,6 +391,7 @@ button {
           padding: 0;
           display: none;
           transition: none;
+          pointer-events: auto;
           li {
             opacity: 1;
             a {

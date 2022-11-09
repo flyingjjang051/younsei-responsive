@@ -368,6 +368,7 @@ button {
     padding: 0;
     display: none;
     transition: none;
+    pointer-events: auto;
   }
   #header #gnb .list .depth02 li {
     opacity: 1;

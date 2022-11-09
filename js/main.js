@@ -95,25 +95,6 @@ gsap.from("#main-visual .title .char", {
     from: "random",
   },
 });
-//gsap.from();
-//document.querySelector("#vid").disablePictureInPicture = true;
-
-const now = new Date();
-const date = now.getDate();
-const day = now.getDay();
-const month = now.getMonth();
-console.log("🚀 ~ file: index.html ~ line 477 ~ month", month);
-
-const days = ["일", "월", "화", "수", "목", "금", "토"];
-const months = ["Feb", "Apr", "", "", "", "", "", "", "", "Oct"];
-console.log(days[day]);
-console.log(months[month]);
-// if (day === 0) {
-//   console.log("일요일");
-// } else if (day === 1) {
-//   console.log("화요일");
-// }
-
 const fundList = document.querySelectorAll(".fund-list li");
 const total = fundList.length;
 console.log("🚀 ~ file: index.html ~ line 511 ~ total", total);
