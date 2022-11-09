@@ -1,11 +1,11 @@
 @import "vars";
 @import "mixins";
 .history {
-  display: none;
   .scroll-menu {
     ul {
       display: flex;
       justify-content: center;
+      margin: 0 -5px;
       li {
         flex-basis: 250px;
         height: 80px;
@@ -175,6 +175,142 @@
     }
   }
 }
-
-
-
+@media all and (max-width: 1280px) {
+  .history {
+    .history-list {
+      ul {
+        &:before {
+          left: 0;
+        }
+        li {
+          &:nth-child(odd) {
+            justify-content: start;
+          }
+          &:nth-child(even) {
+            justify-content: start;
+            text-align: left;
+            .year-box {
+              width: 100%;
+              .year {
+                &:before {
+                  left: -55px;
+                }
+              }
+            }
+          }
+          img {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+    }
+    .chairman-list {
+      flex-direction: column;
+      .list {
+        margin-left: 0;
+        margin-top: 50px;
+      }
+    }
+    .chairman-list02 {
+      flex-direction: column;
+      .list {
+        margin-left: 0;
+        margin-top: 50px;
+      }
+    }
+  }
+}
+@media all and (max-width: 980px) {
+  .history {
+    .chairman-list,
+    .chairman-list02 {
+      h4 {
+        font-size: clamp(24px, 2.6vw, 36px);
+      }
+    }
+    .chairman-list {
+      .list {
+        ul {
+          li {
+            width: calc(33.33% - 10px);
+            font-size: 14px;
+            .name {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+    .chairman-list02 {
+      .list {
+        ul {
+          display: block;
+          li {
+            display: block;
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
+            span {
+              display: block;
+              text-align: left;
+              padding: 10px 20px;
+              border-bottom: none;
+              &.name {
+                font-size: 18px;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 640px) {
+  .history {
+    .scroll-menu {
+      ul {
+        li {
+          height: 60px;
+          font-size: 18px;
+        }
+      }
+    }
+    .history-list {
+      ul li {
+        flex-direction: column;
+        &:nth-child(even) {
+          .year-box .year:before {
+            left: -25px;
+          }
+        }
+        .year-box {
+          width: 100%;
+          padding-left: 20px;
+          .year {
+            font-size: 24px;
+            &:before {
+              left: -25px;
+              right: auto;
+            }
+          }
+        }
+        img {
+          position: static;
+          margin-top: 30px;
+          width: 50%;
+          margin-left: 20px;
+        }
+      }
+    }
+    .chairman-list {
+      .list {
+        ul {
+          li {
+            width: calc(50% - 10px);
+          }
+        }
+      }
+    }
+  }
+}

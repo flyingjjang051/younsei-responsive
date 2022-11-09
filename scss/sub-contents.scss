@@ -9,6 +9,7 @@
   box-sizing: border-box;
   display: flex;
   overflow: hidden;
+  position: relative;
   &:after {
     content: "";
     display: block;
@@ -227,6 +228,24 @@
     }
     .bg {
       display: none;
+    }
+  }
+  .contents-visual {
+    flex-direction: column;
+    margin-right: 0;
+    margin-top: clamp(30px, 10vw, 100px);
+    .left-contents {
+      .txt {
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: clamp(24px, 3.67vw, 36px);
+      }
+    }
+    .right-contents {
+      margin-left: 0;
     }
   }
 }
